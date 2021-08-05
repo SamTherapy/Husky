@@ -136,9 +136,7 @@
     </string>
 
     <string-array name="rick_roll_domains" translatable="false">
-        <item>gab.com</item>
-        <item>gab.ai</item>
-        <item>spinster.xyz</item>
+        <item></item>
     </string-array>
 
     <string name="rick_roll_url">https://www.youtube.com/watch?v=dQw4w9WgXcQ</string>

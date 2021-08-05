@@ -389,17 +389,26 @@ class AccountActivity : BottomSheetActivity(), ActionButtonActivity, HasAndroidI
 
         val usernameFormatted = getString(R.string.status_username_format, account.username)
         accountUsernameTextView.text = usernameFormatted
-        accountDisplayNameTextView.text = account.name.emojify(account.emojis, accountDisplayNameTextView)
+        accountDisplayNameTextView.text =
+            account.name.emojify(account.emojis, accountDisplayNameTextView)
 
         val emojifiedNote = account.note.emojify(account.emojis, accountNoteTextView)
         LinkHelper.setClickableText(accountNoteTextView, emojifiedNote, null, this)
 
-       // accountFieldAdapter.fields = account.fields ?: emptyList()
+        // accountFieldAdapter.fields = account.fields ?: emptyList()
         accountFieldAdapter.emojis = account.emojis ?: emptyList()
         accountFieldAdapter.notifyDataSetChanged()
+        val verified = account.pleroma?.verified
+        var isVerified = false
+        verified!!.forEach {
+            if (it.matches(Regex("verified")))
+                isVerified = true
+        }
 
         accountLockedImageView.visible(account.locked)
         accountBadgeTextView.visible(account.bot)
+        account_verified.visible(isVerified)
+
         // API can return user is both admin and mod
         // but admin rights already implies moderator, so just ignore it
         val isAdmin = account.pleroma?.isAdmin ?: false

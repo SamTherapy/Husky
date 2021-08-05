@@ -298,6 +298,7 @@
     <string name="notification_summary_small">%1$s and %2$s</string>
     <string name="notification_title_summary">%d new interactions</string>
 
+    <string name="description_account_verified">Verified Account</string>
     <string name="description_account_locked">Locked Account</string>
 
     <string name="about_title_activity">About</string>

@@ -152,7 +152,19 @@
                         app:srcCompat="@drawable/ic_reblog_private_24dp"
                         app:tint="?android:textColorSecondary"
                         tools:visibility="visible" />
-                    
+
+                    <ImageView
+                        android:id="@+id/account_verified"
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:contentDescription="@string/description_account_verified"
+                        app:layout_constraintBottom_toBottomOf="@+id/accountDisplayNameTextView"
+                        app:layout_constraintStart_toEndOf="@+id/accountDisplayNameTextView"
+                        app:layout_constraintTop_toTopOf="@+id/accountDisplayNameTextView"
+                        app:srcCompat="@drawable/verified_badge"
+                        tools:layout_editor_absoluteX="230dp"
+                        tools:layout_editor_absoluteY="62dp" />
+
                     <TextView
                         android:id="@+id/accountAdminTextView"
                         android:layout_width="wrap_content"
